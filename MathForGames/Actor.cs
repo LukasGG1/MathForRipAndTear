@@ -35,12 +35,13 @@ namespace MathForGames
         {
             get
             {
-                return _position;
+                return _position; //(_transform.m12, _transform.m23);
             }
             set
             {
                 _position = value;
-                //
+                //_transform.m13 = value.X
+                //_transform.m23 = value.Y;
             }
         }
 
@@ -81,6 +82,7 @@ namespace MathForGames
         public Actor(float x, float y, Color rayColor, char icon = ' ', ConsoleColor color = ConsoleColor.White)
             : this(x,y,icon,color)
         {
+            //_transform = new Martix3();
             _rayColor = rayColor;
         }
 
