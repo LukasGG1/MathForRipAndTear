@@ -33,7 +33,7 @@ namespace MathForGames
             _gameOver = value;
         }
 
-        //
+
         /// <summary>
         /// Returns the scene at the index given.
         /// Returns an empty scene if the index is out of bounds

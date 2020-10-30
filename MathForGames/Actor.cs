@@ -10,6 +10,8 @@ namespace MathForGames
     /// <summary>
     /// This is the base class for all objects that will 
     /// be moved or interacted with in the game
+    /// 
+    /// Create new matrices to transform the actors matrix. The user sho
     /// </summary>
     class Actor
     {
@@ -26,8 +28,13 @@ namespace MathForGames
         public Vector2 Forward
         {
             get { return _facing; } //return new Vector2(_transform.m11, _transform.m21);
-            set { _facing = value; } //_transform.m11 = value.X;
-                                    //_transform.m21 = value.Y;
+            set
+            {
+
+                _facing = value;
+                _transform.m11 = value.X;
+                _transform.m21 = value.Y;
+            }
         }
 
 
@@ -35,13 +42,12 @@ namespace MathForGames
         {
             get
             {
-                return _position; //(_transform.m12, _transform.m23);
+                return _position;
             }
             set
             {
                 _position = value;
-                //_transform.m13 = value.X
-                //_transform.m23 = value.Y;
+                //
             }
         }
 
@@ -66,8 +72,8 @@ namespace MathForGames
         {
             _rayColor = Color.WHITE;
             _icon = icon;
-            //_transform = new Matrix3();
-            _position = new Vector2(x, y); //Position = new Vector2(x,y);
+            _transform = new Matrix3();
+            Position = new Vector2(x, y); //Position = new Vector2(x,y);
             _velocity = new Vector2();
             _color = color;
             Forward = new Vector2(1, 0);
@@ -82,7 +88,6 @@ namespace MathForGames
         public Actor(float x, float y, Color rayColor, char icon = ' ', ConsoleColor color = ConsoleColor.White)
             : this(x,y,icon,color)
         {
-            //_transform = new Martix3();
             _rayColor = rayColor;
         }
 
