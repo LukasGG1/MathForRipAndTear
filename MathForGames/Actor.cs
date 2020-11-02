@@ -18,7 +18,11 @@ namespace MathForGames
         protected char _icon = ' ';
        // protected Vector2 _position;
         protected Vector2 _velocity;
-        protected Matrix3 _transform;
+        protected Matrix3 _transform = new Matrix3();
+        private Matrix3 _translation = new Matrix3();
+        private Matrix3 _rotation = new Matrix3();
+        private Matrix3 _scale = new Matrix3();
+        protected Sprite sprite_;        
         
         //private Vector2 _facing;
         protected ConsoleColor _color;
@@ -65,7 +69,38 @@ namespace MathForGames
                 _velocity = value;
             }
         }
+        //Matrix Transform
+        //========================
 
+
+
+
+        //Martix Set
+        //=======================
+        public void SetTranslate(Vector2 position)
+        {
+
+        }
+
+        public void SetRotation(float radians)
+        {
+            _rotation.m11 = (float)Math.Cos(radians);
+            _rotation.m12 = (float)Math.Sin(radians);
+            _rotation.m21 = (float)-Math.Sin(radians);
+            _rotation.m22 = (float)Math.Cos(radians);
+        }
+
+        public void SetScale(float x, float y)
+        {
+            _scale.m11 = x; _scale.m12 = 0; _scale.m13 = 0;
+            _scale.m21 = 0; _scale.m22 = y; _scale.m23 = 0;
+            _scale.m31 = 0; _scale.m32 = 0; _scale.m33 = 0;
+        }
+
+        private void UpdateTransform()
+        {
+            
+        }
 
         /// <param name="x">Position on the x axis</param>
         /// <param name="y">Position on the y axis</param>
@@ -76,6 +111,7 @@ namespace MathForGames
             _rayColor = Color.WHITE;
             _icon = icon;
             _transform = new Matrix3();
+            _scale = new Matrix3(0,0);
             Position = new Vector2(x, y);
             _velocity = new Vector2();
             _color = color;
@@ -119,10 +155,19 @@ namespace MathForGames
 
             //Increase position by the current velocity
             Position += _velocity * deltaTime;
+
         }
 
         public virtual void Draw()
         {
+            if(sprite_ != null)
+            {
+                sprite_.Draw(_transform);
+                //sprite_.Draw(_rotation);
+                sprite_.Draw(_scale);
+                //sprite_.Draw(_translation);
+                //sprite_.Draw(_transform);
+            }
             //Draws the actor and a line indicating it facing to the raylib window.
             //Scaled to match console movement
             Raylib.DrawText(_icon.ToString(), (int)(Position.X * 32), (int)(Position.Y * 32), 32, _rayColor);
@@ -132,6 +177,7 @@ namespace MathForGames
                 (int)((Position.X + Forward.X) * 32),
                 (int)((Position.Y + Forward.Y) * 32),
                 Color.WHITE
+                
             );
 
             //Changes the color of the console text to be this actors color

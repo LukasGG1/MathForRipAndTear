@@ -201,17 +201,21 @@ namespace MathForGames
             Goal goal = new Goal(30, 20,Color.GREEN, player, 'G', ConsoleColor.Green);
 
             //Initialize the enmies starting values
-            enemyHigh.Speed = 0.5f;
-            enemyMid.Speed = 0.5f;
-            //enemyLow.Speed = 0.5f;
 
+            //Speed
+            enemyHigh.Speed = 2.5f;
+            enemyMid.Speed = 1.5f;
+            enemyLow.Speed = 0.5f;
+            player.Speed = 1.76f;
+            
+            //Target
             enemyHigh.Target = player;
             enemyMid.Target = player;
             enemyLow.Target = player;
             goal.Target = player;
 
             //Set player's starting speed
-            player.Speed = 0.279f;
+            
 
             //Add actors to the scenes
             scene1.AddActor(player);

@@ -18,7 +18,7 @@ namespace MathForGames
         private Vector2 _patrolPointA;
         private Vector2 _patrolPointB;
         private Vector2 _currentPoint;
-        private float _speed = 0;
+        private float _speed = 2;
 
         public float Speed
         {
