@@ -19,6 +19,7 @@ namespace MathForGames
         private Vector2 _patrolPointB;
         private Vector2 _currentPoint;
         private float _speed = 2;
+        private Sprite _sprite;
 
         public float Speed
         {
@@ -86,6 +87,7 @@ namespace MathForGames
             PatrolPointA = patrolPointA;
             PatrolPointB = patrolPointB;
             _currentPoint = PatrolPointA;
+            _sprite = new Sprite("Images/enemy.png");
         }
 
         /// <summary>
@@ -153,6 +155,13 @@ namespace MathForGames
             }
             UpdatePatrolLocation();
             base.Update(deltaTime);
+        }
+
+        public override void Draw()
+        {
+
+            _sprite.Draw(_transform);
+            base.Draw();
         }
     }
 }

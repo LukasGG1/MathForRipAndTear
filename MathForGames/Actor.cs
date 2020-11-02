@@ -79,7 +79,9 @@ namespace MathForGames
         //=======================
         public void SetTranslate(Vector2 position)
         {
-
+            _translation.m13 = position.X;
+            _translation.m23 = position.Y;
+            
         }
 
         public void SetRotation(float radians)
@@ -97,8 +99,12 @@ namespace MathForGames
             _scale.m31 = 0; _scale.m32 = 0; _scale.m33 = 0;
         }
 
+        
+
         private void UpdateTransform()
         {
+            _transform += _translation + _rotation + _scale;
+            
             
         }
 
@@ -140,6 +146,7 @@ namespace MathForGames
                 return;
 
             Forward = Velocity.Normalized;
+          
         }
         
         public virtual void Start()
@@ -150,6 +157,8 @@ namespace MathForGames
 
         public virtual void Update(float deltaTime)
         {
+            UpdateTransform();
+
             //Before the actor is moved, update the direction it's facing
             UpdateFacing();
 
@@ -164,7 +173,7 @@ namespace MathForGames
             {
                 sprite_.Draw(_transform);
                 //sprite_.Draw(_rotation);
-                sprite_.Draw(_scale);
+                //sprite_.Draw(_scale);
                 //sprite_.Draw(_translation);
                 //sprite_.Draw(_transform);
             }

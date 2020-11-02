@@ -13,6 +13,7 @@ namespace MathForGames
     {
         private float _speed = 3;
         private Sprite _sprite;
+        
 
         public float Speed
         {
@@ -64,6 +65,7 @@ namespace MathForGames
 
         public override void Draw()
         {
+            
             _sprite.Draw(_transform);
             base.Draw();
         }

@@ -194,10 +194,10 @@ namespace MathForGames
             Scene scene2 = new Scene();
 
             //Create the actors to add to our scene
-            Enemy enemyHigh = new Enemy(0, 5, Color.YELLOW, new Vector2(0,5), new Vector2(30, 5), '■', ConsoleColor.Green);
-            Enemy enemyMid = new Enemy(10, 10, Color.YELLOW, new Vector2(0, 10), new Vector2(30, 10), '■', ConsoleColor.Green);
-            Enemy enemyLow = new Enemy(3, 20, Color.YELLOW, new Vector2(0, 20), new Vector2(30, 20), '■', ConsoleColor.Green);
-            Player player = new Player(0, 1,Color.BLUE, '@', ConsoleColor.Red);
+            Enemy enemyHigh = new Enemy(0, 5, Color.YELLOW, new Vector2(0,5), new Vector2(30, 5), ' ', ConsoleColor.Green);
+            Enemy enemyMid = new Enemy(10, 10, Color.YELLOW, new Vector2(0, 10), new Vector2(30, 10), ' ', ConsoleColor.Green);
+            Enemy enemyLow = new Enemy(3, 20, Color.YELLOW, new Vector2(0, 20), new Vector2(30, 20), ' ', ConsoleColor.Green);
+            Player player = new Player(0, 1,Color.BLUE, ' ', ConsoleColor.Red);
             Goal goal = new Goal(30, 20,Color.GREEN, player, 'G', ConsoleColor.Green);
 
             //Initialize the enmies starting values
