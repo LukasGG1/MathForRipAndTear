@@ -216,7 +216,7 @@ namespace MathForGames
 
             //Set Martix
             player.SetTranslate(new Vector2(10, 10));
-            player.SetRotation(1);
+            //player.SetRotation(1);
             player.SetScale(1, 1);
 
             //Set player's starting speed

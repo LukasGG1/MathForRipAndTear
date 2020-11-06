@@ -28,7 +28,7 @@ namespace MathForGames
             //Copy the values from the old array to the new array
             for (int i = 0; i < _actors.Length; i++)
             {
-                 appendedArray[i] = _actors[i];
+                appendedArray[i] = _actors[i];
             }
             //Set the last value in the new array to be the actor we want to add
             appendedArray[_actors.Length] = actor;
@@ -39,7 +39,7 @@ namespace MathForGames
         public bool RemoveActor(int index)
         {
             //Check to see if the index is outside the bounds of our array
-            if(index < 0 || index >= _actors.Length)
+            if (index < 0 || index >= _actors.Length)
             {
                 return false;
             }
@@ -51,11 +51,11 @@ namespace MathForGames
             //Create variable to access tempArray index
             int j = 0;
             //Copy values from the old array to the new array
-            for(int i = 0; i < _actors.Length; i++)
+            for (int i = 0; i < _actors.Length; i++)
             {
                 //If the current index is not the index that needs to be removed,
                 //add the value into the old array and increment j
-                if(i != index)
+                if (i != index)
                 {
                     newArray[j] = _actors[i];
                     j++;
@@ -108,16 +108,23 @@ namespace MathForGames
             return actorRemoved;
         }
 
+
+        //Check to see if any actor in the scene has collided with another actor.
+        private void CheckCollision()
+        {
+            
+        }
+
         public virtual void Start(float deltaTime)
         {
-            for (int i = 0; i < _actors.Length; i++)
-            {
-                if (!_actors[i].Started)
-                {
-                    _actors[i].Start();
-                }
-                _actors[i].Update(deltaTime);
-            }
+            //for (int i = 0; i < _actors.Length; i++)
+            //{
+            //    if (!_actors[i].Started)
+            //    {
+            //        _actors[i].Start();
+            //    }
+            //    _actors[i].Update(deltaTime);
+            //}
             Started = true;
         }
 
@@ -130,6 +137,7 @@ namespace MathForGames
 
                 _actors[i].Update(deltaTime);
             }
+            CheckCollision();
         }
 
         public virtual void Draw()
