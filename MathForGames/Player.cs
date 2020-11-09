@@ -13,6 +13,7 @@ namespace MathForGames
     {
         private float _speed = 3;
         private Sprite _sprite;
+        private Bullet _bullet;
         
 
         public float Speed
@@ -56,8 +57,12 @@ namespace MathForGames
             int yDirection = -Convert.ToInt32(Game.GetKeyDown((int)KeyboardKey.KEY_W))
                 + Convert.ToInt32(Game.GetKeyDown((int)KeyboardKey.KEY_S));
 
+            //Bullet fires
+            int bulletFired = -Convert.ToInt32(Game.GetKeyDown((int)KeyboardKey.KEY_SPACE));
+
             //Set the actors current velocity to be the a vector with the direction found scaled by the speed
             Velocity = new Vector2(xDirection, yDirection);
+            
             Velocity = Velocity.Normalized * Speed;
             
             base.Update(deltaTime);

@@ -199,6 +199,7 @@ namespace MathForGames
             Enemy enemyLow = new Enemy(3, 20, Color.YELLOW, new Vector2(0, 20), new Vector2(30, 20), ' ', ConsoleColor.Green);
             Player player = new Player(2, 5,Color.BLUE, ' ', ConsoleColor.Red);
             Goal goal = new Goal(30, 20,Color.GREEN, player, 'G', ConsoleColor.Green);
+            Bullet bullet = new Bullet(20, 20, Color.GREEN, ' ');
 
             //Initialize the enmies starting values
 
@@ -228,6 +229,9 @@ namespace MathForGames
             scene1.AddActor(enemyMid);
             scene1.AddActor(enemyLow);
             scene1.AddActor(goal);
+
+            //Bullet appear when player press button "SPACE"
+            scene1.AddActor(bullet);
             
             //Sets the starting scene index and adds the scenes to the scenes array
             int startingSceneIndex = 0;

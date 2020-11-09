@@ -34,6 +34,18 @@ namespace MathForGames
             _sprite = new Sprite("Images/bullet.png");
         }
 
+        public new Vector2 Velocity
+        {
+            get
+            {
+                return _velocity;
+            }
+            set
+            {
+                _velocity = value;
+            }
+        }
+
         public override void Update(float deltaTime)
         {
 

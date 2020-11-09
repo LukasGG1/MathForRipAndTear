@@ -268,7 +268,7 @@ namespace MathForGames
             if (_velocity.Magnitude <= 0)
                 return;
 
-            // Forward = Velocity.Normalized;
+            Forward = Velocity.Normalized;
 
         }
         
