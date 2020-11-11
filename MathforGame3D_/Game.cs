@@ -24,6 +24,25 @@ namespace MathForGame3D_
 
         }
 
+        public static ConsoleColor DefaultColor { get; internal set; }
+
+        public static bool GetKeyDown(int key)
+        {
+            return Raylib.IsKeyDown((KeyboardKey)key);
+        }
+
+
+        /// <summary>
+        /// Returns true while if key was pressed once
+        /// </summary>
+        /// <param name="key">The ascii value of the key to check</param>
+        /// <returns></returns>
+        public static bool GetKeyPressed(int key)
+        {
+            return Raylib.IsKeyPressed((KeyboardKey)key);
+        }
+
+
         private void Start()
         {
             Raylib.InitWindow(1024, 760, "Math for Games");
@@ -49,8 +68,12 @@ namespace MathForGame3D_
 
             Raylib.ClearBackground(Color.RAYWHITE);
 
+
             Raylib.DrawSphere(new System.Numerics.Vector3(), 1, Color.DARKGRAY);
+            Raylib.DrawSphere(new System.Numerics.Vector3(), 0.5f, Color.BLUE);
             Raylib.DrawGrid(10, 1.0f);
+
+
 
             Raylib.EndMode3D();
             Raylib.EndDrawing();

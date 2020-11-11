@@ -47,7 +47,7 @@ namespace MathLibrary
             }
         }
 
-        
+        public float Z { get; internal set; }
 
         public Vector2()
         {

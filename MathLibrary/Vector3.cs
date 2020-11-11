@@ -9,6 +9,8 @@ namespace MathLibrary
         private float _x;
         private float _y;
         private float _z;
+        private int xDirection;
+        private int yDirection;
 
         public float X
         {
@@ -77,6 +79,14 @@ namespace MathLibrary
             _y = y;
             _z = z;
         }
+
+        public Vector3(int xDirection, int yDirection)
+        {
+            this.xDirection = xDirection;
+            this.yDirection = yDirection;
+        }
+
+
 
         /// <summary>
         /// Returns the normalized version of a the vector passed in.

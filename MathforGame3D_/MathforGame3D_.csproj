@@ -13,4 +13,10 @@
     <ProjectReference Include="..\MathLibrary\MathLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Actor.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
 </Project>
