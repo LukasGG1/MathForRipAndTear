@@ -49,6 +49,10 @@ namespace MathForGames
         public override void Update(float deltaTime)
         {
 
+            int xDirection = -Convert.ToInt32(Game.GetKeyDown((int)MouseButton.MOUSE_RIGHT_BUTTON));
+            int yDirection = -Convert.ToInt32(Game.GetKeyDown((int)MouseButton.MOUSE_RIGHT_BUTTON));
+
+            Velocity = new Vector2(xDirection, yDirection);
 
             base.Update(deltaTime);
         }

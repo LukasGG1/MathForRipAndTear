@@ -71,8 +71,9 @@ namespace MathForGames
                 Vector2 lookPosition = LocalPosition + value.Normalized;
                 LookAt(lookPosition);
             }
-
+            
         }
+        
 
 
 
@@ -81,11 +82,13 @@ namespace MathForGames
             get
             {
                 return new Vector2(_transform.m13, _transform.m23);
+                
             }
             set
             {
                 _translation.m13 = value.X;
                 _translation.m23 = value.Y;
+                
             }
         }
 
@@ -110,26 +113,41 @@ namespace MathForGames
         //=======================
         public void SetTranslate(Vector2 position)
         {
-            _translation.m13 = position.X;
-            _translation.m23 = position.Y;
+            //_translation.m13 = position.X;
+            //_translation.m23 = position.Y;
+            _translation = Matrix3.CreateTranslation(position);
 
         }
 
+
+        //Rotation
+        //==========================
         public void SetRotation(float radians)
         {
-            //_rotationAngle
-            _rotation.m11 = (float)Math.Cos(radians);
-            _rotation.m21 = -(float)Math.Sin(radians);
-            _rotation.m12 = (float)Math.Sin(radians);
-            _rotation.m22 = (float)Math.Cos(radians);
+            _rotation = Matrix3.CreateRotation(radians);
+            //_rotationAngle = radians;
+            //_rotation.m11 = (float)Math.Cos(radians);
+            //_rotation.m21 = -(float)Math.Sin(radians);
+            ////_rotation.m31 = (float)Math.Sin(radians);
+
+            //_rotation.m12 = (float)Math.Sin(radians);
+            //_rotation.m22 = (float)Math.Cos(radians);
+            ////_rotation.m32 = (float)Math.Sin(radians);
+            //Test
+
+            //_rotation.m13 = (float)Math.Sin(radians);
+            //_rotation.m23 = (float)Math.Cos(radians);
+            //_rotation.m33 = (float)Math.Sin(radians);
+
         }
 
          public void Rotate(float radians)
          {
-            _rotationAngle += radians;
-           SetRotation(_rotationAngle);
+            _rotation *= Matrix3.CreateRotation(radians);
+           // _rotationAngle += radians;
+           //SetRotation(_rotationAngle);
          }
-
+        //================================
 
         //Checks to see if this actor overlaps another.
 
@@ -149,8 +167,9 @@ namespace MathForGames
 
         public void SetScale(float x, float y)
         {
-            _scale.m11 = x;     // _scale.m12 = 0; _scale.m13 = 0;
-            _scale.m22 = y;     // _scale.m22 = 0; _scale.m23 = 0;
+            
+            //_scale.m11 = x;     // _scale.m12 = 0; _scale.m13 = 0;
+            //_scale.m22 = y;     // _scale.m22 = 0; _scale.m23 = 0;
             //_scale.m31 = 0; _scale.m32 = 0; _scale.m33 = 0;
         }
 
@@ -160,6 +179,11 @@ namespace MathForGames
         {
             _localTransform = _translation * _rotation * _scale;
 
+            if (_parent != null)
+                _globalTransform = _parent._globalTransform * _localTransform;
+
+            else
+                _globalTransform = Game.GetCurrentScene().World * _localTransform;
 
         }
 
@@ -229,7 +253,7 @@ namespace MathForGames
 
             //Use the dotproduct to find the angle the actor needs to rotate
             float dotProd = Vector2.DotProduct(Forward, direction);
-            if (Math.Abs(dotProd) > 1)
+            if (Math.Abs(dotProd) > 1.0f)
                 return;
             float angle = (float)Math.Acos(dotProd);
 
@@ -265,8 +289,9 @@ namespace MathForGames
         /// </summary>
         private void UpdateFacing()
         {
-            if (_velocity.Magnitude <= 0)
+            if (_velocity.Magnitude <= 0.0f)
                 return;
+            //SetRotation(0.1f);
 
             Forward = Velocity.Normalized;
 
@@ -285,7 +310,7 @@ namespace MathForGames
 
             //Before the actor is moved, update the direction it's facing
             UpdateFacing();
-
+            Rotate(0.1f);
             //Increase position by the current velocity
             LocalPosition += _velocity * deltaTime;
 
@@ -308,10 +333,10 @@ namespace MathForGames
            
             //Player and NPC's sight of line draw
             Raylib.DrawLine(
-                (int)(LocalPosition.X * 32),
-                (int)(LocalPosition.Y * 32),
-                (int)((LocalPosition.X + Forward.X) * 32),
-                (int)((LocalPosition.Y + Forward.Y) * 32),
+                (int)(WorldPosition.X * 32),
+                (int)(WorldPosition.Y * 32),
+                (int)((WorldPosition.X + Forward.X) * 32),
+                (int)((WorldPosition.Y + Forward.Y) * 32),
                 Color.WHITE
                 
             );
@@ -320,10 +345,10 @@ namespace MathForGames
             Console.ForegroundColor = _color;
 
             //Only draws the actor on the console if it is within the bounds of the window
-            if (LocalPosition.X >= 0 && LocalPosition.X < Console.WindowWidth
-                && LocalPosition.Y >= 0 && LocalPosition.Y < Console.WindowHeight)
+            if (WorldPosition.X >= 0 && WorldPosition.X < Console.WindowWidth
+                && WorldPosition.Y >= 0 && WorldPosition.Y < Console.WindowHeight)
             {
-                Console.SetCursorPosition((int)LocalPosition.X, (int)LocalPosition.Y);
+                Console.SetCursorPosition((int)WorldPosition.X, (int)WorldPosition.Y);
                 Console.Write(_icon);
             }
 

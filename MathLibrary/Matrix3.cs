@@ -12,9 +12,9 @@ namespace MathLibrary
 
         public Matrix3()
         {
-            m11 = 1; m12 = 0; m13 = 0;
-            m21 = 0; m22 = 1; m23 = 0;
-            m31 = 0; m32 = 0; m33 = 1;
+            m11 = 1.0f; m12 = 0; m13 = 0;
+            m21 = 0; m22 = 1.0f; m23 = 0;
+            m31 = 0; m32 = 0; m33 = 1.0f;
         }
 
         public Matrix3(float x, float y)
@@ -32,6 +32,34 @@ namespace MathLibrary
             this.m21 = m21, this.m22 = m22, this.m23 = m23,
             this.m31 = m31, this.m32 = m32, this.m33 = m33
             );
+        }
+
+        public static Matrix3 CreateRotation(float radians)
+        {
+            return new Matrix3(
+                (float)Math.Cos(radians), -(float)Math.Sin(radians), 0,
+                (float)Math.Sin(radians), (float)Math.Cos(radians), 0,
+                0, 0, 1);
+        }
+
+        public static Matrix3 CreateTranslation(Vector2 position)
+        {
+            return new Matrix3
+                (
+                    0, 0, position.X,
+                    0, 0, position.Y,
+                    0, 0, 1
+                );
+        }
+
+        public static Matrix3 CreateScale(Vector2 scale)
+        {
+            return new Matrix3
+                (
+                    scale.X, 0, 0,
+                    0, scale.Y, 0,
+                    0, 0, 1
+                );
         }
 
         public static Matrix3 operator +(Matrix3 lhs, Matrix3 rhs)

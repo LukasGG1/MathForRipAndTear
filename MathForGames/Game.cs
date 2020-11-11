@@ -216,13 +216,25 @@ namespace MathForGames
             goal.Target = player;
 
             //Set Martix
-            player.SetTranslate(new Vector2(10, 10));
-            //player.SetRotation(1);
+            player.SetTranslate(new Vector2(10.0f, 10.0f));
+            //player.SetRotation(0.1f);
+
+            //player.Rotate(0.1f);
+            //player.Rotate(0.2f);
+            //player.Rotate(0.3f);
+            //player.Rotate(0.4f);
+            //player.Rotate(0.5f);
+            //player.Rotate(0.6f);
+            //player.Rotate(0.7f);
+            //player.Rotate(0.8f);
+            //player.Rotate(0.9f);
+            //player.Rotate(1.0f);
+
             player.SetScale(1, 1);
 
             //Set player's starting speed
             
-
+            
             //Add actors to the scenes
             scene1.AddActor(player);
             scene1.AddActor(enemyHigh);
@@ -230,6 +242,7 @@ namespace MathForGames
             scene1.AddActor(enemyLow);
             scene1.AddActor(goal);
 
+            player.AddChild(enemyMid);
             //Bullet appear when player press button "SPACE"
             scene1.AddActor(bullet);
             

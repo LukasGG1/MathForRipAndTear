@@ -51,8 +51,8 @@ namespace MathLibrary
 
         public Vector2()
         {
-            _x = 0;
-            _y = 0;
+            _x = 0.0f;
+            _y = 0.0f;
         }
 
         public Vector2(float x, float y)

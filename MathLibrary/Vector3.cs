@@ -66,9 +66,9 @@ namespace MathLibrary
 
         public Vector3()
         {
-            _x = 0;
-            _y = 0;
-            _z = 0;
+            _x = 0.0f;
+            _y = 0.0f;
+            _z = 0.0f;
         }
 
         public Vector3(float x, float y, float z)
