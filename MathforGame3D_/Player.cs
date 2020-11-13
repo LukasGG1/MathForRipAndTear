@@ -57,7 +57,7 @@ namespace MathforGame3D_
             //Bullet fires
 
             //Set the actors current velocity to be the a vector with the direction found scaled by the speed
-            Velocity = new Vector3(xDirection, yDirection, zDirection);
+            Velocity = new System.Numerics.Vector3(xDirection, yDirection, zDirection);
 
             //Velocity = Velocity.Normalized * Speed;
 
