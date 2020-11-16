@@ -139,7 +139,7 @@ namespace MathLibrary
 
         public static Vector3 CrossProduct(Vector3 vector, Vector3 scalar)
         {
-            return new Vector3(vector.X * scalar.X) * (vector.Y * scalar.Y) * (vector.Z * scalar.Z);
+            return new Vector3();
         }
 
         public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
@@ -147,11 +147,7 @@ namespace MathLibrary
             return new Vector3(lhs.X += rhs.X, lhs.Y += rhs.Y, lhs.Z += rhs.Z);
         }
 
-        public static Vector3 operator +(float scalar, Vector3 lhs)
-        {
 
-            return new Vector3(lhs.X += scalar, lhs.Y += scalar, lhs.Z += scalar);
-        }
 
 
 

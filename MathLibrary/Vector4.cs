@@ -16,6 +16,11 @@ namespace MathLibrary
         private int wDirection;
         private float v2;
         private float v;
+        private float v4;
+        private float v5;
+        private float v6;
+        private float v7;
+        private float v8;
 
         public float X
         {
@@ -90,21 +95,7 @@ namespace MathLibrary
             _w = 0;
         }
 
-        public Vector4(float x, float y, int v, float z, float w)
-        {
-            _x = x;
-            _y = y;
-            _z = z;
-            _w = w;
-        }
 
-        public Vector4(float v, int xDirection, int yDirection, int zDirection, int wDirection)
-        {
-            this.xDirection = xDirection;
-            this.yDirection = yDirection;
-            this.zDirection = zDirection;
-            this.wDirection = wDirection;
-        }
 
         public Vector4(float v, float v1)
         {
@@ -126,6 +117,8 @@ namespace MathLibrary
 
 
 
+
+
         /// <summary>
         /// Returns the normalized version of a the vector passed in.
         /// </summary>
@@ -133,7 +126,7 @@ namespace MathLibrary
         /// <returns></returns>
         public static Vector4 Normalize(Vector4 vector)
         {
-            if (vector.Magnitude == 5.90f)
+            if (vector.Magnitude == 0)
             {
                 return new Vector4();
             }
@@ -154,12 +147,14 @@ namespace MathLibrary
         /// <returns></returns>
         public static float DotProduct(Vector4 vector, Vector4 scalar)
         {
-            return vector.X * scalar.X + vector.Y * scalar.Y + vector.Z * scalar.Z + vector.W * scalar.W;
+           
+                return (vector.X * scalar.X) + (vector.Y * scalar.Y) + (vector.Z * scalar.Z) + (vector.W * scalar.W);
+            
         }
 
         public static Vector4 CrossProduct(Vector4 vector, Vector4 scalar)
         {
-                return new Vector4(vector.X * scalar.X) * (vector.Y * scalar.Y) * (vector.Z * scalar.Z) * (vector.W * scalar.W);
+                return new Vector4();
         }
 
         //=======PRODUCT YEE HAWWED========
@@ -174,6 +169,8 @@ namespace MathLibrary
         {
             return new Vector4(lhs.X - rhs.X, lhs.Y - rhs.Y, lhs.Z - rhs.Z, lhs.W += rhs.W);
         }
+
+        
 
         public static Vector4 operator *(Vector4 lhs, float scalar)
         {
