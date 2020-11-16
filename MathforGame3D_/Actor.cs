@@ -78,6 +78,8 @@ namespace MathForGame3D_
 
         }
 
+        
+
         public virtual void Draw()
         {
 
