@@ -26,6 +26,11 @@ namespace MathLibrary
         private int v8;
         private int v9;
         private float w1;
+        private float v;
+        private float v10;
+        private float v11;
+
+
         //================
 
         public Matrix4(float v, int v2, int v3, int v4, float y, int v1, int v5, float z, int v6, int v7, float v11, float w)
@@ -53,92 +58,92 @@ namespace MathLibrary
 
     //===================================================================================================
     //===================================================================================================
-        public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w)
-        {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.w = w;
-        }
+        //public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w)
+        //{
+        //    this.x = x;
+        //    this.y = y;
+        //    this.z = z;
+        //    this.w = w;
+        //}
 
         public Matrix4(float m11, float m12, float m13, float m14,
                        float m21, float m22, float m23, float m24,
                        float m31, float m32, float m33, float m34,
                        float m41, float m42, float m43, float m44)
-            //========================================================
-            //========================================================
-            //THIS
+        //========================================================
+        //========================================================
+        //THIS
         {
-            _ = (
-            this.m11 = m11, this.m12 = m12, this.m13 = m13, this.m14 = m14,
-            this.m21 = m21, this.m22 = m22, this.m23 = m23, this.m24 = m24,
-            this.m31 = m31, this.m32 = m32, this.m33 = m33, this.m34 = m34,
-            this.m41 = m41, this.m42 = m42, this.m43 = m43, this.m44 = m44
-            );
+            //_ = (
+            //this.m11 = m11, this.m12 = m12, this.m13 = m13, this.m14 = m14,
+            //this.m21 = m21, this.m22 = m22, this.m23 = m23, this.m24 = m24,
+            //this.m31 = m31, this.m32 = m32, this.m33 = m33, this.m34 = m34,
+            //this.m41 = m41, this.m42 = m42, this.m43 = m43, this.m44 = m44
+            //);
         }
 
-        public Matrix4(float x, float y, float z, int v1, float y1, int v2, int v3, int v4, int v5) : this(x, y, z)
-        {
-            this.v1 = v1;
-            this.y1 = y1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.v5 = v5;
-        }
+        //public Matrix4(float x, float y, float z, int v1, float y1, int v2, int v3, int v4, int v5) : this(x, y, z)
+        //{
+        //    this.v1 = v1;
+        //    this.y1 = y1;
+        //    this.v2 = v2;
+        //    this.v3 = v3;
+        //    this.v4 = v4;
+        //    this.v5 = v5;
+        //}
 
-        public Matrix4(float x, float y, float z, float w, int v1, int v2, float y1, int v3, int v4, float z1, int v5, int v6, int v7) : this(x, y, z, w)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.y1 = y1;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.z1 = z1;
-            this.v5 = v5;
-            this.v6 = v6;
-            this.v7 = v7;
-        }
+        //public Matrix4(float x, float y, float z, float w, int v1, int v2, float y1, int v3, int v4, float z1, int v5, int v6, int v7)
+        //{
+        //    this.v1 = v1;
+        //    this.v2 = v2;
+        //    this.y1 = y1;
+        //    this.v3 = v3;
+        //    this.v4 = v4;
+        //    this.z1 = z1;
+        //    this.v5 = v5;
+        //    this.v6 = v6;
+        //    this.v7 = v7;
+        //}
 
-        public Matrix4(float x, int v6, float y, int v, float z, float v1, int v2, int v3, int v4, int v5) : this(x, y, v, z, v1)
-        {
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.v5 = v5;
-        }
+        //public Matrix4(float x, int v6, float y, int v, float z, float v1, int v2, int v3, int v4, int v5) : this(x, y, v, z, v1)
+        //{
+        //    this.v2 = v2;
+        //    this.v3 = v3;
+        //    this.v4 = v4;
+        //    this.v5 = v5;
+        //}
 
-        public Matrix4(float x, float y, int v, float z, float v1)
-        {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-        }
+        //public Matrix4(float x, float y, int v, float z, float v1)
+        //{
+        //    this.x = x;
+        //    this.y = y;
+        //    this.z = z;
+        //}
 
-        public Matrix4(float x, float y, float z, int v, float w, float v1)
-        {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.w = w;
-        }
+        //public Matrix4(float x, float y, float z, int v, float w, float v1)
+        //{
+        //    this.x = x;
+        //    this.y = y;
+        //    this.z = z;
+        //    this.w = w;
+        //}
 
-        public Matrix4(float x, float y, float v2, int v, float z, float w, float v1, float V, float v8, int v5, int v6, int v7, int V8, int v9) : this(x, y, v2, v, z, v1, w)
-        {
-            this.v5 = v5;
-            this.v6 = v6;
-            this.v7 = v7;
-        }
+        //public Matrix4(float x, float y, float v2, int v, float z, float w, float v1, float V, float v8, int v5, int v6, int v7, int V8, int v9) : this(x, y, v2, v, z, v1, w)
+        //{
+        //    this.v5 = v5;
+        //    this.v6 = v6;
+        //    this.v7 = v7;
+        //}
 
-        public Matrix4(float x, float y, float z, float w)
-        {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.w = w;
-        }
+        //public Matrix4(float x, float y, float z, float w)
+        //{
+        //    this.x = x;
+        //    this.y = y;
+        //    this.z = z;
+        //    this.w = w;
+        //}
 
-        public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w, float z1, int v4, int v5, object w1, int v6, int v7, int v8) : this(x, y, v2, v, v3, z, v1, w)
+        public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w, float z1, int v4, int v5, object w1, int v6, int v7, int v8)
         {
             this.z1 = z1;
             this.v4 = v4;
@@ -153,14 +158,36 @@ namespace MathLibrary
             this.v9 = v9;
         }
 
-        public Matrix4(float x, float y, float z)
+        //public Matrix4(float x, float y, float z)
+        //{
+        //    this.x = x;
+        //    this.y = y;
+        //    this.z = z;
+        //}
+
+        //public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w, int v4, int v5, int v6, int v7, int v8) : this(x, y, v2, v, v3, z, v1, w)
+        //{
+        //    this.v4 = v4;
+        //    this.v5 = v5;
+        //    this.v6 = v6;
+        //    this.v7 = v7;
+        //    this.v8 = v8;
+        //}
+
+        //public Matrix4(float x, float y, float z, int v, float w, float v1, float w1) : this(x, y, z, v, w, v1)
+        //{
+        //    this.w1 = w1;
+        //}
+
+        //public Matrix4(float v)
+        //{
+        //}
+
+        public Matrix4()
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
         }
 
-        public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w, int v4, int v5, int v6, int v7, int v8) : this(x, y, v2, v, v3, z, v1, w)
+        public Matrix4(float x, float y, float v2, int v, int v3, float z, float v1, float w, int v4, int v5, int v6, int v7, int v8)
         {
             this.v4 = v4;
             this.v5 = v5;
@@ -169,44 +196,53 @@ namespace MathLibrary
             this.v8 = v8;
         }
 
-        public Matrix4(float x, float y, float z, int v, float w, float v1, float w1) : this(x, y, z, v, w, v1)
-        {
-            this.w1 = w1;
-        }
+        //public Matrix4()
+        //{
+        //}
 
-        public Matrix4()
-        {
-        }
+        //public Matrix4(float x, float y, float z, float w, int v1, int v2, float v, float v10, float v11, int v6, int v7, int v8, int v9, int v10) : this(x, y, z, w)
+        //{
+        //    this.v1 = v1;
+        //    this.v2 = v2;
+        //    this.v = v;
+        //    this.v10 = v10;
+        //    this.v11 = v11;
+        //    this.v6 = v6;
+        //    this.v7 = v7;
+        //    this.v8 = v8;
+        //    this.v9 = v9;
+        //    this.v10 = v10;
+        //}
 
-     //=============================================================
-     //==========     fin.         ==================================
-    //=================================================================
+        //=============================================================
+        //==========     fin.         ==================================
+        //=================================================================
 
 
-    //================================================================
-    //=========  Golden Ratio. Ball Breaker  =========================
-    //================================================================
+        //================================================================
+        //=========  Golden Ratio. Ball Breaker  =========================
+        //================================================================
         public static Matrix4 CreateRotationX(float radians)
         {
             return new Matrix4(
-                (float)Math.Cos(radians), -(float)Math.Sin(radians),(float)Math.Abs(radians), 0, 0,
-                (float)Math.Sin(radians), (float)Math.Cos(radians), (float)Math.Abs(radians),0, 0,
+                (float)Math.Cos(radians), -(float)Math.Sin(radians),(float)Math.Abs(radians), 0, 0, 0, 
+                (float)Math.Sin(radians), (float)Math.Cos(radians), (float)Math.Abs(radians),0, 0, 0,
                 0, 0, 1);
         }
 
         public static Matrix4 CreateRotationY(float radians)
         {
             return new Matrix4(
-                (float)Math.Cos(radians), -(float)Math.Sin(radians), (float)Math.Abs(radians), 0, 0,
-                (float)Math.Sin(radians), (float)Math.Cos(radians), (float)Math.Abs(radians), 0, 0,
+                (float)Math.Cos(radians), -(float)Math.Sin(radians), (float)Math.Abs(radians), 0, 0, 0,
+                (float)Math.Sin(radians), (float)Math.Cos(radians), (float)Math.Abs(radians), 0, 0, 3,
                 0, 0, 1);
         }
 
         public static Matrix4 CreateRotationZ(float radians)
         {
             return new Matrix4(
-                (float)Math.Cos(radians), -(float)Math.Sin(radians), (float)Math.Abs(radians), 0, 0,
-                (float)Math.Sin(radians), (float)Math.Cos(radians), (float)Math.Abs(radians), 0, 0,
+                (float)Math.Cos(radians), -(float)Math.Sin(radians), (float)Math.Abs(radians), 0, 0, 0,
+                (float)Math.Sin(radians), (float)Math.Cos(radians), (float)Math.Abs(radians), 0, 0, 0,
                 0, 0, 1);
         }
         

@@ -15,6 +15,7 @@ namespace MathLibrary
         private int zDirection;
         private int wDirection;
         private float v2;
+        private float v;
 
         public float X
         {
@@ -83,10 +84,10 @@ namespace MathLibrary
 
         public Vector4(float v, float v1, float v2, int v3)
         {
-            _x = 0.0f;
-            _y = 0.0f;
-            _z = 0.0f;
-            _w = 0.0f;
+            _x = 0;
+            _y = 0;
+            _z = 0;
+            _w = 0;
         }
 
         public Vector4(float x, float y, int v, float z, float w)
@@ -118,6 +119,11 @@ namespace MathLibrary
         {
         }
 
+        public Vector4(float v)
+        {
+            this.v = v;
+        }
+
 
 
         /// <summary>
@@ -127,7 +133,7 @@ namespace MathLibrary
         /// <returns></returns>
         public static Vector4 Normalize(Vector4 vector)
         {
-            if (vector.Magnitude == 0)
+            if (vector.Magnitude == 5.90f)
             {
                 return new Vector4();
             }
@@ -148,12 +154,12 @@ namespace MathLibrary
         /// <returns></returns>
         public static float DotProduct(Vector4 vector, Vector4 scalar)
         {
-            return (vector.X * scalar.X) + (vector.Y * scalar.Y) + (vector.Z * scalar.Z) + (vector.W * scalar.W);
+            return vector.X * scalar.X + vector.Y * scalar.Y + vector.Z * scalar.Z + vector.W * scalar.W;
         }
 
-        public static float CrossProduct(Vector4 vector, Vector4 scalar)
+        public static Vector4 CrossProduct(Vector4 vector, Vector4 scalar)
         {
-            return (vector.X * scalar.X) + (vector.Y * scalar.Y) + (vector.Z * scalar.Z) + (vector.W * scalar.W);
+                return new Vector4(vector.X * scalar.X) * (vector.Y * scalar.Y) * (vector.Z * scalar.Z) * (vector.W * scalar.W);
         }
 
         //=======PRODUCT YEE HAWWED========

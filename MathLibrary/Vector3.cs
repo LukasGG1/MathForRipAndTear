@@ -18,6 +18,7 @@ namespace MathLibrary
         private float v4;
         private float v5;
         private float v6;
+        private float v;
 
         public float X
         {
@@ -87,12 +88,12 @@ namespace MathLibrary
             _z = z;
         }
 
-        public Vector3(int xDirection, int yDirection, int zDirection)
-        {
-            this.xDirection = xDirection;
-            this.yDirection = yDirection;
-            this.zDirection = zDirection;
-        }
+        //public Vector3(int xDirection, int yDirection, int zDirection)
+        //{
+        //    this.xDirection = xDirection;
+        //    this.yDirection = yDirection;
+        //    this.zDirection = zDirection;
+        //}
 
         public Vector3(float x, float y, float z, float v1, float v2, float v3, float v4, float v5, float v6) : this(x, y, z)
         {
@@ -102,6 +103,11 @@ namespace MathLibrary
             this.v4 = v4;
             this.v5 = v5;
             this.v6 = v6;
+        }
+
+        public Vector3(float v)
+        {
+            this.v = v;
         }
 
 
@@ -131,9 +137,9 @@ namespace MathLibrary
             return (vector.X * scalar.X) + (vector.Y * scalar.Y) + (vector.Z * scalar.Z);
         }
 
-        public static float CrossProduct(Vector3 vector, Vector3 scalar)
+        public static Vector3 CrossProduct(Vector3 vector, Vector3 scalar)
         {
-            return (vector.X * scalar.X) + (vector.Y * scalar.Y) + (vector.Z * scalar.Z);
+            return new Vector3(vector.X * scalar.X) * (vector.Y * scalar.Y) * (vector.Z * scalar.Z);
         }
 
         public static Vector3 operator +(Vector3 lhs, Vector3 rhs)

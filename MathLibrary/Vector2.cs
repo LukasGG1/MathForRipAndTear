@@ -102,6 +102,12 @@ namespace MathLibrary
             return new Vector2(lhs.X * scalar, lhs.Y * scalar);
         }
 
+        public static Vector2 operator *(float scalar, Vector2 rhs)
+        {
+
+            return new Vector2(rhs.X * scalar, rhs.Y * scalar);
+        }
+
         public static Vector2 operator /(Vector2 lhs, float scalar)
         {
             return new Vector2(lhs.X / scalar, lhs.Y / scalar);
