@@ -1,14 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using MathLibrary;
+using Raylib_cs;
 
 namespace MathForGame3D_
 {
     class Scene
     {
         private Actor[] _actors;
+        private Matrix3 _transform = new Matrix3();
 
+        public Matrix3 World
+        {
+            get { return _transform; }
+        }
 
+        public bool Started { get; private set; }
 
         public Scene()
         {
@@ -102,19 +110,57 @@ namespace MathForGame3D_
             return actorRemoved;
         }
 
-
-        //Check to see if any actor in the scene has collided with another actor.
+        /// <summary>
+        /// Check to see if any actor in the scene has collided with another actor.
+        /// </summary>
         private void CheckCollision()
         {
 
         }
 
+        public virtual void Start()
+        {
+            Started = true;
+        }
+
+        public virtual void Update(float deltaTime)
+        {
+            for (int i = 0; i < _actors.Length; i++)
+            {
+                if (!_actors[i].Started)
+                    _actors[i].Start();
+
+                _actors[i].Update(deltaTime);
+            }
+            CheckCollision();
+        }
+
+        public virtual void Draw()
+        {
+            for (int i = 0; i < _actors.Length; i++)
+            {
+                Raylib.DrawGrid(20, 1.0f);
+                _actors[i].Draw();
+            }
+        }
+
+        public virtual void End()
+        {
+            for (int i = 0; i < _actors.Length; i++)
+            {
+                if (_actors[i].Started)
+                    _actors[i].End();
+            }
+
+            Started = false;
 
 
 
 
 
-        
+
+
+        }
     }
 }
 

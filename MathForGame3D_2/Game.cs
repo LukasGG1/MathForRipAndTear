@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Raylib_cs;
-using MathLibrary;
 
-namespace MathForGame3D_
+namespace MathForGame3D_2
 {
     class Game
     {

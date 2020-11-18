@@ -95,7 +95,7 @@ namespace MathLibrary
         //    this.zDirection = zDirection;
         //}
 
-        public Vector3(float x, float y, float z, float v1, float v2, float v3, float v4, float v5, float v6) : this(x, y, z)
+        public Vector3(float x, float y, float z, float v1, float v2, float v3, float v4, float v5, float v6)
         {
             this.v1 = v1;
             this.v2 = v2;
@@ -121,7 +121,7 @@ namespace MathLibrary
         {
             if (vector.Magnitude == 0)
             {
-                return new Vector3();
+                return new Vector3(0);
             }
             return vector / vector.Magnitude;
         }
@@ -137,9 +137,9 @@ namespace MathLibrary
             return (vector.X * scalar.X) + (vector.Y * scalar.Y) + (vector.Z * scalar.Z);
         }
 
-        public static Vector3 CrossProduct(Vector3 vector, Vector3 scalar)
+        public static Vector3 CrossProduct(Vector3 lhs, Vector3 rhs)
         {
-            return new Vector3();
+            return new Vector3(0);
         }
 
         public static Vector3 operator +(Vector3 lhs, Vector3 rhs)
@@ -162,11 +162,16 @@ namespace MathLibrary
             return new Vector3(lhs.X * scalar, lhs.Y * scalar, lhs.Z * scalar);
         }
 
-        public static Vector3 operator *(float scalar, Vector3 rhs)
+        public static Vector3 operator *(float scalar, Vector3 lhs)
         {
-
-            return new Vector3(rhs.X * scalar, rhs.Y * scalar, rhs.Z * scalar);
+            return new Vector3(lhs.X * scalar, lhs.Y * scalar, lhs.Z * scalar);
         }
+
+        //public static Vector3 operator *(float scalar, Vector3 rhs)
+        //{
+
+        //    return new Vector3(rhs.X * scalar, rhs.Y * scalar, rhs.Z * scalar);
+        //}
 
         public static Vector3 operator *(Matrix3 lhs, Vector3 rhs)
         {
