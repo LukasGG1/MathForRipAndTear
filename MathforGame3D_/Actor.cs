@@ -361,6 +361,10 @@ namespace MathForGame3D_
             //Increase position by the current velocity
             LocalPosition += _velocity * deltaTime;
 
+            Velocity += Acceleration;
+            if (Velocity.Magnitude > MaxSpeed)
+                Velocity = Velocity.Normalized * MaxSpeed;
+
 
             SetRotationY(rotation += (float)(Math.PI / 2) * deltaTime);
         }

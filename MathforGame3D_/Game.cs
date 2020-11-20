@@ -139,7 +139,7 @@ namespace MathForGame3D_
         private void Update(float deltaTime)
         {
             if (!_scenes[_currentSceneIndex].Started)
-                _scenes[_currentSceneIndex].Start();
+                _scenes[_currentSceneIndex].Start(null);
 
             _scenes[_currentSceneIndex].Update(deltaTime);
         }

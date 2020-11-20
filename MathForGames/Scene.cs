@@ -14,6 +14,7 @@ namespace MathForGames
         {
             get { return _transform; }
         }
+
         public bool Started { get; private set; }
 
         public Scene()
@@ -108,23 +109,16 @@ namespace MathForGames
             return actorRemoved;
         }
 
-
-        //Check to see if any actor in the scene has collided with another actor.
+        /// <summary>
+        /// Check to see if any actor in the scene has collided with another actor.
+        /// </summary>
         private void CheckCollision()
         {
-            
+
         }
 
         public virtual void Start(float deltaTime)
         {
-            //for (int i = 0; i < _actors.Length; i++)
-            //{
-            //    if (!_actors[i].Started)
-            //    {
-            //        _actors[i].Start();
-            //    }
-            //    _actors[i].Update(deltaTime);
-            //}
             Started = true;
         }
 

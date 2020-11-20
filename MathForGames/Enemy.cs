@@ -91,6 +91,10 @@ namespace MathForGames
             _sprite = new Sprite("Images/enemy.png");
         }
 
+        public Enemy(float x, float y, Color rayColor, char icon = ' ', ConsoleColor color = ConsoleColor.White) : base(x, y, rayColor, icon, color)
+        {
+        }
+
         /// <summary>
         /// Checks to see if the target is within the given angle
         /// and within the given distance. Returns false if no

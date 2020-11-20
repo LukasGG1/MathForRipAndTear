@@ -118,7 +118,7 @@ namespace MathForGame3D_
 
         }
 
-        public virtual void Start()
+        public virtual void Start(object p)
         {
             Started = true;
         }
