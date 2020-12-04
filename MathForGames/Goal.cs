@@ -46,7 +46,7 @@ namespace MathForGames
             /// delegate is null, then the Invoke() call will not be executed.
             /// This is a shorthand way to type the following:
             ///  if (GameManager.onWin != null)
-            ///     GameManager.onWin.Invoke();
+            ///     GameManager.onWin.Invoke();s
             /// This the advantage of using the Invoke call rather than calling the delegate
             /// like so:
             ///      GameManager.onWin();
