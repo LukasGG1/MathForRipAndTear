@@ -95,15 +95,15 @@ namespace MathLibrary
         //    this.zDirection = zDirection;
         //}
 
-        public Vector3(float x, float y, float z, float v1, float v2, float v3, float v4, float v5, float v6)
-        {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.v4 = v4;
-            this.v5 = v5;
-            this.v6 = v6;
-        }
+        //public Vector3(float x, float y, float z, float v1, float v2, float v3, float v4, float v5, float v6)
+        //{
+        //    this.v1 = v1;
+        //    this.v2 = v2;
+        //    this.v3 = v3;
+        //    this.v4 = v4;
+        //    this.v5 = v5;
+        //    this.v6 = v6;
+        //}
 
         public Vector3(float v)
         {
@@ -173,65 +173,65 @@ namespace MathLibrary
         //    return new Vector3(rhs.X * scalar, rhs.Y * scalar, rhs.Z * scalar);
         //}
 
-        public static Vector3 operator *(Matrix3 lhs, Vector3 rhs)
-        {
-            return new Vector3
-                (
+        //public static Vector3 operator *(Matrix3 lhs, Vector3 rhs)
+        //{
+        //    return new Vector3
+        //        (
 
-                    //==============ONE ROW==================================================
-                    //Row1, Column1
-                    lhs.m11 * rhs.X + lhs.m12 * rhs.Y + lhs.m13 * rhs.Z,
-                    //Row1, Column2
-                    lhs.m11 * rhs.X + lhs.m12 * rhs.Y + lhs.m13 * rhs.Z,
-                    //Row1, Column3
-                    lhs.m11 * rhs.X + lhs.m12 * rhs.Y + lhs.m13 * rhs.Z,
-                    //===============TWO ROW=================================================
-                    //Row2, Column1
-                    lhs.m21 * rhs.X + lhs.m22 * rhs.Y + lhs.m23 * rhs.Z,
-                    //Row2, Column2
-                    lhs.m21 * rhs.X + lhs.m22 * rhs.Y + lhs.m23 * rhs.Z,
-                    //Row2, Column3
-                    lhs.m21 * rhs.X + lhs.m22 * rhs.Y + lhs.m23 * rhs.Z,
-                    //===============THREE ROW================================================
-                    //Row3, Column1
-                    lhs.m31 * rhs.X + lhs.m32 * rhs.Y + lhs.m33 * rhs.Z,
-                    //Row3, Column2
-                    lhs.m31 * rhs.X + lhs.m32 * rhs.Y + lhs.m33 * rhs.Z,
-                    //Row3, Column3
-                    lhs.m31 * rhs.X + lhs.m32 * rhs.Y + lhs.m33 * rhs.Z
-                );
+        //            //==============ONE ROW==================================================
+        //            //Row1, Column1
+        //            lhs.m11 * rhs.X + lhs.m12 * rhs.Y + lhs.m13 * rhs.Z,
+        //            //Row1, Column2
+        //            lhs.m11 * rhs.X + lhs.m12 * rhs.Y + lhs.m13 * rhs.Z,
+        //            //Row1, Column3
+        //            lhs.m11 * rhs.X + lhs.m12 * rhs.Y + lhs.m13 * rhs.Z,
+        //            //===============TWO ROW=================================================
+        //            //Row2, Column1
+        //            lhs.m21 * rhs.X + lhs.m22 * rhs.Y + lhs.m23 * rhs.Z,
+        //            //Row2, Column2
+        //            lhs.m21 * rhs.X + lhs.m22 * rhs.Y + lhs.m23 * rhs.Z,
+        //            //Row2, Column3
+        //            lhs.m21 * rhs.X + lhs.m22 * rhs.Y + lhs.m23 * rhs.Z,
+        //            //===============THREE ROW================================================
+        //            //Row3, Column1
+        //            lhs.m31 * rhs.X + lhs.m32 * rhs.Y + lhs.m33 * rhs.Z,
+        //            //Row3, Column2
+        //            lhs.m31 * rhs.X + lhs.m32 * rhs.Y + lhs.m33 * rhs.Z,
+        //            //Row3, Column3
+        //            lhs.m31 * rhs.X + lhs.m32 * rhs.Y + lhs.m33 * rhs.Z
+        //        );
             
-        }
+        //}
 
-        public static Vector3 operator *(Vector3 lhs, Matrix3 rhs)
-        {
-            return new Vector3
-                (
+        //public static Vector3 operator *(Vector3 lhs, Matrix3 rhs)
+        //{
+        //    return new Vector3
+        //        (
 
-                    //==============ONE ROW==================================================
-                    //Row1, Column1
-                    rhs.m11 * lhs.X + rhs.m12 * lhs.Y + rhs.m13 * lhs.Z,
-                    //Row1, Column2
-                    rhs.m11 * lhs.X + rhs.m12 * lhs.Y + rhs.m13 * lhs.Z,
-                    //Row1, Column3
-                    rhs.m11 * lhs.X + rhs.m12 * lhs.Y + rhs.m13 * lhs.Z,
-                    //===============TWO ROW=================================================
-                    //Row2, Column1
-                    rhs.m21 * lhs.X + rhs.m22 * lhs.Y + rhs.m23 * lhs.Z,
-                    //Row2, Column2
-                    rhs.m21 * lhs.X + rhs.m22 * lhs.Y + rhs.m23 * lhs.Z,
-                    //Row2, Column3
-                    rhs.m21 * lhs.X + rhs.m22 * lhs.Y + rhs.m23 * lhs.Z,
-                    //===============THREE ROW================================================
-                    //Row3, Column1
-                    rhs.m31 * lhs.X + rhs.m32 * lhs.Y + rhs.m33 * lhs.Z,
-                    //Row3, Column2
-                    rhs.m31 * lhs.X + rhs.m32 * lhs.Y + rhs.m33 * lhs.Z,
-                    //Row3, Column3
-                    rhs.m31 * lhs.X + rhs.m32 * lhs.Y + rhs.m33 * lhs.Z
-                );
+        //            //==============ONE ROW==================================================
+        //            //Row1, Column1
+        //            rhs.m11 * lhs.X + rhs.m12 * lhs.Y + rhs.m13 * lhs.Z,
+        //            //Row1, Column2
+        //            rhs.m11 * lhs.X + rhs.m12 * lhs.Y + rhs.m13 * lhs.Z,
+        //            //Row1, Column3
+        //            rhs.m11 * lhs.X + rhs.m12 * lhs.Y + rhs.m13 * lhs.Z,
+        //            //===============TWO ROW=================================================
+        //            //Row2, Column1
+        //            rhs.m21 * lhs.X + rhs.m22 * lhs.Y + rhs.m23 * lhs.Z,
+        //            //Row2, Column2
+        //            rhs.m21 * lhs.X + rhs.m22 * lhs.Y + rhs.m23 * lhs.Z,
+        //            //Row2, Column3
+        //            rhs.m21 * lhs.X + rhs.m22 * lhs.Y + rhs.m23 * lhs.Z,
+        //            //===============THREE ROW================================================
+        //            //Row3, Column1
+        //            rhs.m31 * lhs.X + rhs.m32 * lhs.Y + rhs.m33 * lhs.Z,
+        //            //Row3, Column2
+        //            rhs.m31 * lhs.X + rhs.m32 * lhs.Y + rhs.m33 * lhs.Z,
+        //            //Row3, Column3
+        //            rhs.m31 * lhs.X + rhs.m32 * lhs.Y + rhs.m33 * lhs.Z
+        //        );
 
-        }
+        //}
 
 
         public static Vector3 operator /(Vector3 lhs, float scalar)

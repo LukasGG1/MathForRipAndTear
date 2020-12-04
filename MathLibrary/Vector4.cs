@@ -110,10 +110,10 @@ namespace MathLibrary
         {
         }
 
-        public Vector4(float v)
-        {
-            this.v = v;
-        }
+        //public Vector4(float v)
+        //{
+        //    this.v = v;
+        //}
 
 
 
