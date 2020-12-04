@@ -59,7 +59,7 @@ namespace MathForGames
             Velocity = new Vector2(xDirection, yDirection);
             Velocity = Velocity.Normalized * Speed;
 
-            Acceleration
+
 
             base.Update(deltaTime);
         }

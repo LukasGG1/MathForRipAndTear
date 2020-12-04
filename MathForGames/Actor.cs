@@ -249,7 +249,7 @@ namespace MathForGames
             //Before the actor is moved, update the direction it's facing
             UpdateFacing();
 
-            Velocity += Acceleration;
+
 
             //if(Velocity.Magnitude > MaxSpeed)
 
