@@ -1,8 +1,8 @@
 Peer Review for Math For Game
 |==============================|
 Author of project being reviewed:  
-Reviewer:  
-Date:  
+Reviewer:  Ethan Jones
+Date:  12/5/2020
 
 |=============================================|
  
@@ -10,7 +10,7 @@ Does the code conform to a consistent coding standard?
 
  ____________________________________________________________
 /							     \
-|							      |
+|		Yes					      |
 |							      |
 \____________________________________________________________/
  
@@ -19,7 +19,7 @@ Note the relevant coding standard and list places where the code can be improved
  ____________________________________________________________
 /							     \
 |							      |
-|							      |
+|		No					      |
 \____________________________________________________________/
  
 |============================================================|
@@ -27,7 +27,7 @@ Is the code well commented, easy to read and understand?
 
  ____________________________________________________________
 /							     \
-|							      |
+|	Yes						      |
 |							      |
 \____________________________________________________________/
 
@@ -37,8 +37,8 @@ List at least one area for improvement or practice you can apply to your own pro
  
  ____________________________________________________________
 /							     \
-|							      |
-|							      |
+|	Making a child and have follow the parent.						      |
+|	Yes						      |
 \____________________________________________________________/
 
 |====================================================================================|
@@ -46,8 +46,8 @@ Comment on the mechanics of the application. Note any variation from the brief.
  
  ____________________________________________________________
 /							     \
-|							      |
-|							      |
+|	Player can bounce of the side of the game.					      |
+|	Player rotates when moving to different direction.						      |
 \____________________________________________________________/
 
 |======================================================================|
@@ -55,7 +55,7 @@ Does the program perform identically on different machines?
  
  ____________________________________________________________
 /							     \
-|							      |
+|	Yes						      |
 |							      |
 \____________________________________________________________/
 
@@ -64,7 +64,7 @@ Is the code well structured?
 
  ____________________________________________________________
 /							     \
-|							      |
+|	Yes						      |
 |							      |
 \____________________________________________________________/
 
@@ -73,7 +73,7 @@ List at least one area for improvement or practice you can apply to your own pro
  
  ____________________________________________________________
 /							     \
-|							      |
+|	Making a child and parent.						      |
 |							      |
 \____________________________________________________________/
 
@@ -82,7 +82,7 @@ Is vector and matrix math used correctly to draw and manipulation the position a
 
  ____________________________________________________________
 /							     \
-|							      |
+|	Yes						      |
 |							      |
 \____________________________________________________________/
 
@@ -91,7 +91,7 @@ Note any differences in how calculations are performed between this program and 
  
  ____________________________________________________________
 /							     \
-|							      |
+|	No						      |
 |							      |
 \____________________________________________________________/
 
@@ -101,7 +101,7 @@ Is there anything else noteworthy? Please, give me advice.
 
  ____________________________________________________________
 /							     \
-|							      |
+|	Remove unnecessary comment out code. 						      |
 |							      |
 \____________________________________________________________/
 
@@ -111,7 +111,7 @@ How would you rate the quality of this project?
  
  ____________________________________________________________
 /							     \
-|							      |
+|	8/10						      |
 |							      |
 \____________________________________________________________/
 
@@ -121,7 +121,7 @@ What steps could be taken to resolve any quality issues?
  
  ____________________________________________________________
 /							     \
-|							      |
+|	Removing unnecessary comment out codes.						      |
 |							      |
 \____________________________________________________________/
  
