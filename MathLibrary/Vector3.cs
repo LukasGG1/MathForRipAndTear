@@ -88,22 +88,7 @@ namespace MathLibrary
             _z = z;
         }
 
-        //public Vector3(int xDirection, int yDirection, int zDirection)
-        //{
-        //    this.xDirection = xDirection;
-        //    this.yDirection = yDirection;
-        //    this.zDirection = zDirection;
-        //}
 
-        //public Vector3(float x, float y, float z, float v1, float v2, float v3, float v4, float v5, float v6)
-        //{
-        //    this.v1 = v1;
-        //    this.v2 = v2;
-        //    this.v3 = v3;
-        //    this.v4 = v4;
-        //    this.v5 = v5;
-        //    this.v6 = v6;
-        //}
 
         public Vector3(float v)
         {
@@ -139,7 +124,10 @@ namespace MathLibrary
 
         public static Vector3 CrossProduct(Vector3 lhs, Vector3 rhs)
         {
-            return new Vector3(0);
+            float x = lhs.Y * rhs.Z - lhs.Z * rhs.Y;
+            float y = lhs.Z * rhs.X - lhs.X * rhs.Z;
+            float z = lhs.X * rhs.Y - lhs.Y * rhs.X;
+            return new Vector3(x,y,z);
         }
 
         public static Vector3 operator +(Vector3 lhs, Vector3 rhs)

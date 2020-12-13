@@ -121,6 +121,14 @@ namespace MathLibrary
 
         public static Vector3 operator *(Matrix3 lhs, Vector3 rhs)
         {
+            return new Vector3(
+                    lhs.m11 * rhs.X + lhs.m21 * rhs.Y + lhs.m31 * rhs.Z,
+                    lhs.m12 * rhs.X + lhs.m22 * rhs.Y + lhs.m32 * rhs.Z,
+                    lhs.m13 * rhs.X + lhs.m23 * rhs.Y + lhs.m33 * rhs.Z);
+        }
+
+        public static Vector3 operator *(Vector3 lhs, Matrix3 rhs)
+        {
             return new Vector3();
         }
 
@@ -129,6 +137,14 @@ namespace MathLibrary
 
         //public class Matrix3
         //{
+        //return new Vector3(
+        //        lhs.m11* rhs.X + lhs.m21* rhs.Y + lhs.m31* rhs.Z,
+        //        lhs.m12* rhs.X + lhs.m22* rhs.Y + lhs.m32* rhs.Z,
+        //        lhs.m13* rhs.X + lhs.m23* rhs.Y + lhs.m33* rhs.Z);
+
+
+
+
         //    public float m11, m12, m13, m21, m22, m23, m31, m32, m33;
         //    private float x;
         //    private float y;
