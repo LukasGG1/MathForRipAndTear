@@ -216,7 +216,7 @@ namespace MathForGames
             _scenes[_currentSceneIndex].Update(deltaTime);
         }
 
-        /// <summary>
+        /// <summary>k
         /// Used to display objects and other info on the screen.
         /// </summary>
         public void Draw()
